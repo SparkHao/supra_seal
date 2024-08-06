@@ -167,10 +167,10 @@ private:
                     size_t off; // in bytes
                 } h, l, a, b_g1, b_g2;
             } data;
-
-            if (!ngpus()) {
-                throw sppark_error{ENODEV, std::string("No CUDA devices available")};
-            }
+            printf("ngpus(): %u \n", ngpus());
+//             if (!ngpus()) {
+//                 throw sppark_error{ENODEV, std::string("No CUDA devices available")};
+//             }
 
             int srs_file = open(srs_path, O_RDONLY);
 
